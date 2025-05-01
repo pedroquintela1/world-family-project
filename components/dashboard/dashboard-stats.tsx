@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowUp, ArrowDown, Users, ListOrdered, Coins, Clock } from "lucide-react"
-import defaultUserIcon from '/default-user-icon.png';
 
 export function DashboardStats() {
   const stats = [
@@ -17,7 +16,7 @@ export function DashboardStats() {
       subtitle: "Esquerda / Direita",
       icon: Users,
       iconColor: "bg-app-blue",
-      customIcon: defaultUserIcon, // Added custom icon for Binary Network
+      customIcon: "/default-user-icon.png", // Added custom icon for Binary Network
     },
     {
       title: "Doações Recebidas",
