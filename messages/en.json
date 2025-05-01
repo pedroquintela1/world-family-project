@@ -1,0 +1,21 @@
+
+{
+  "common": {
+    "settings": "Settings",
+    "profile": "Profile",
+    "account": "Account",
+    "payments": "Payments",
+    "notifications": "Notifications",
+    "minimum_donation": "Minimum donation: $20.00 USD"
+  },
+  "metamask": {
+    "title": "Metamask Payment System",
+    "description": "World Family uses the Metamask API to process donations and distribute payments securely and transparently.",
+    "security": "Security",
+    "security_desc": "All transactions are verified and recorded on the blockchain, ensuring complete transparency and security.",
+    "verification": "Automatic Verification",
+    "verification_desc": "Our system automatically verifies if payments have been made correctly before processing them.",
+    "minimum": "Minimum Amount",
+    "minimum_desc": "The minimum donation amount is $20.00 USD, paid through your Metamask wallet."
+  }
+}
