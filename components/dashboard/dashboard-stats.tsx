@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowUp, ArrowDown, Users, ListOrdered, Coins, Clock } from "lucide-react"
+import defaultUserIcon from '../public/default-user-icon.png'; // Placeholder - replace with actual path
 
 export function DashboardStats() {
   const stats = [
@@ -16,6 +17,7 @@ export function DashboardStats() {
       subtitle: "Esquerda / Direita",
       icon: Users,
       iconColor: "bg-app-blue",
+      customIcon: defaultUserIcon, // Added custom icon for Binary Network
     },
     {
       title: "Doações Recebidas",
@@ -35,7 +37,7 @@ export function DashboardStats() {
   ]
 
   return (
-    <>
+    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4"> {/* Added responsive grid */}
       {stats.map((stat, index) => (
         <Card key={index} className="card-dashboard animate-enter" style={{ animationDelay: `${index * 0.1}s` }}>
           <CardContent className="p-6">
@@ -56,12 +58,16 @@ export function DashboardStats() {
                 {stat.subtitle && <p className="text-xs text-app-text-secondary mt-1">{stat.subtitle}</p>}
               </div>
               <div className={`p-3 rounded-md ${stat.iconColor}`}>
-                <stat.icon className="h-5 w-5 text-white" />
+                {stat.customIcon ? ( // Conditional rendering for custom icon
+                  <img src={stat.customIcon} alt="User Icon" className="h-5 w-5" />
+                ) : (
+                  <stat.icon className="h-5 w-5 text-white" />
+                )}
               </div>
             </div>
           </CardContent>
         </Card>
       ))}
-    </>
+    </div>
   )
 }

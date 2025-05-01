@@ -17,6 +17,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export function DashboardHeader() {
   const [isOpen, setIsOpen] = useState(false)
+  const user = { name: "Marcus White" }; // Example user data
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-app-background-light py-2">
@@ -125,8 +126,10 @@ export function DashboardHeader() {
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="relative h-10 w-10 rounded-full p-0">
                 <Avatar className="h-10 w-10 border-2 border-muted">
-                  <AvatarImage src="/placeholder.svg" alt="@user" />
-                  <AvatarFallback className="bg-app-purple text-white">MU</AvatarFallback>
+                  <AvatarImage src="/user-icon.png" alt="@user" />
+                  <AvatarFallback className="bg-gradient-to-br from-app-purple to-app-purple-dark text-white uppercase">
+                    {`${user?.name?.split(' ')[0]?.[0]}${user?.name?.split(' ')[1]?.[0] || ''}`}
+                  </AvatarFallback>
                 </Avatar>
               </Button>
             </DropdownMenuTrigger>
