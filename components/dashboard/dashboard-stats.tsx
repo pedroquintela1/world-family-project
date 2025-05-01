@@ -36,7 +36,7 @@ export function DashboardStats() {
   ]
 
   return (
-    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4"> {/* Added responsive grid */}
+    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"> {/* Added responsive grid */}
       {stats.map((stat, index) => (
         <Card key={index} className="card-dashboard animate-enter" style={{ animationDelay: `${index * 0.1}s` }}>
           <CardContent className="p-6">

@@ -10,34 +10,26 @@ import { MetamaskInfo } from "@/components/dashboard/metamask-info"
 
 export default function DashboardPage() {
   return (
-    <div className="space-y-6">
+    <div className="container mx-auto px-4 space-y-6">
       <DashboardBalance />
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <DashboardStats />
-      </div>
+      <DashboardStats />
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+      <div className="grid gap-6 grid-cols-1 lg:grid-cols-2">
         <QueuePosition />
         <BinaryNetwork />
       </div>
 
-      <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-1">
-        <MetamaskInfo />
-      </div>
+      <MetamaskInfo />
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+      <div className="grid gap-6 grid-cols-1 lg:grid-cols-2">
         <TopDonors />
         <NextRecipients />
       </div>
 
-      <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-1">
-        <RecentTransactions />
-      </div>
-
-      <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-1">
-        <SystemStatus />
-      </div>
+      <RecentTransactions />
+      
+      <SystemStatus />
     </div>
   )
 }
