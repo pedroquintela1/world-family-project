@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowUp, ArrowDown, Users, ListOrdered, Coins, Clock } from "lucide-react"
-import defaultUserIcon from '../public/default-user-icon.png'; // Placeholder - replace with actual path
+import defaultUserIcon from '/default-user-icon.png';
 
 export function DashboardStats() {
   const stats = [
