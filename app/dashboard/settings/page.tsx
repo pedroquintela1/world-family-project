@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
@@ -11,54 +12,54 @@ export default function SettingsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Configurações</h1>
-        <p className="text-muted-foreground">Gerencie suas preferências e informações da conta</p>
+        <h1 className="text-3xl font-bold tracking-tight">Settings</h1>
+        <p className="text-muted-foreground">Manage your preferences and account information</p>
       </div>
 
       <Tabs defaultValue="profile">
         <TabsList className="grid w-full grid-cols-4">
-          <TabsTrigger value="profile">Perfil</TabsTrigger>
-          <TabsTrigger value="account">Conta</TabsTrigger>
-          <TabsTrigger value="payment">Pagamentos</TabsTrigger>
-          <TabsTrigger value="notifications">Notificações</TabsTrigger>
+          <TabsTrigger value="profile">Profile</TabsTrigger>
+          <TabsTrigger value="account">Account</TabsTrigger>
+          <TabsTrigger value="payment">Payments</TabsTrigger>
+          <TabsTrigger value="notifications">Notifications</TabsTrigger>
         </TabsList>
 
         <TabsContent value="profile" className="mt-6 space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle>Informações Pessoais</CardTitle>
-              <CardDescription>Atualize suas informações pessoais</CardDescription>
+              <CardTitle>Personal Information</CardTitle>
+              <CardDescription>Update your personal information</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="name">Nome Completo</Label>
-                <Input id="name" placeholder="Seu nome completo" defaultValue="João Silva" />
+                <Label htmlFor="name">Full Name</Label>
+                <Input id="name" placeholder="Your full name" defaultValue="John Smith" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email">E-mail</Label>
-                <Input id="email" type="email" placeholder="seu@email.com" defaultValue="joao@exemplo.com" />
+                <Label htmlFor="email">Email</Label>
+                <Input id="email" type="email" placeholder="your@email.com" defaultValue="john@example.com" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="phone">Telefone</Label>
-                <Input id="phone" placeholder="(00) 00000-0000" defaultValue="(11) 98765-4321" />
+                <Label htmlFor="phone">Phone</Label>
+                <Input id="phone" placeholder="+1 (555) 000-0000" defaultValue="+1 (555) 123-4567" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="country">País</Label>
-                <Select defaultValue="br">
+                <Label htmlFor="country">Country</Label>
+                <Select defaultValue="us">
                   <SelectTrigger>
-                    <SelectValue placeholder="Selecione seu país" />
+                    <SelectValue placeholder="Select your country" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="br">Brasil</SelectItem>
-                    <SelectItem value="us">Estados Unidos</SelectItem>
-                    <SelectItem value="pt">Portugal</SelectItem>
-                    <SelectItem value="es">Espanha</SelectItem>
+                    <SelectItem value="us">United States</SelectItem>
+                    <SelectItem value="uk">United Kingdom</SelectItem>
+                    <SelectItem value="ca">Canada</SelectItem>
+                    <SelectItem value="au">Australia</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
             </CardContent>
             <CardFooter>
-              <Button>Salvar Alterações</Button>
+              <Button>Save Changes</Button>
             </CardFooter>
           </Card>
         </TabsContent>
@@ -66,48 +67,48 @@ export default function SettingsPage() {
         <TabsContent value="account" className="mt-6 space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle>Segurança da Conta</CardTitle>
-              <CardDescription>Atualize sua senha e configurações de segurança</CardDescription>
+              <CardTitle>Account Security</CardTitle>
+              <CardDescription>Update your password and security settings</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="current-password">Senha Atual</Label>
+                <Label htmlFor="current-password">Current Password</Label>
                 <Input id="current-password" type="password" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="new-password">Nova Senha</Label>
+                <Label htmlFor="new-password">New Password</Label>
                 <Input id="new-password" type="password" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="confirm-password">Confirmar Nova Senha</Label>
+                <Label htmlFor="confirm-password">Confirm New Password</Label>
                 <Input id="confirm-password" type="password" />
               </div>
               <Separator />
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <Label htmlFor="2fa">Autenticação de Dois Fatores</Label>
-                  <p className="text-sm text-muted-foreground">Adicione uma camada extra de segurança à sua conta</p>
+                  <Label htmlFor="2fa">Two-Factor Authentication</Label>
+                  <p className="text-sm text-muted-foreground">Add an extra layer of security to your account</p>
                 </div>
                 <Switch id="2fa" />
               </div>
             </CardContent>
             <CardFooter>
-              <Button>Atualizar Senha</Button>
+              <Button>Update Password</Button>
             </CardFooter>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>Excluir Conta</CardTitle>
-              <CardDescription>Exclua permanentemente sua conta e todos os dados associados</CardDescription>
+              <CardTitle>Delete Account</CardTitle>
+              <CardDescription>Permanently delete your account and all associated data</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
-                Esta ação não pode ser desfeita. Todos os seus dados serão permanentemente excluídos.
+                This action cannot be undone. All your data will be permanently deleted.
               </p>
             </CardContent>
             <CardFooter>
-              <Button variant="destructive">Excluir Conta</Button>
+              <Button variant="destructive">Delete Account</Button>
             </CardFooter>
           </Card>
         </TabsContent>
@@ -115,40 +116,30 @@ export default function SettingsPage() {
         <TabsContent value="payment" className="mt-6 space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle>Métodos de Pagamento</CardTitle>
-              <CardDescription>Gerencie seus métodos de pagamento para doações e recebimentos</CardDescription>
+              <CardTitle>Payment Methods</CardTitle>
+              <CardDescription>Manage your payment methods for donations and receipts</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="binance-id">ID Binance Pay</Label>
-                <Input id="binance-id" placeholder="Seu ID Binance Pay" defaultValue="12345678" />
+                <Label htmlFor="binance-id">Binance Pay ID</Label>
+                <Input id="binance-id" placeholder="Your Binance Pay ID" defaultValue="12345678" />
                 <p className="text-sm text-muted-foreground">
-                  Usado para receber pagamentos via Binance Pay e criptomoedas
+                  Used to receive payments via Binance Pay and cryptocurrencies
                 </p>
               </div>
               <Separator />
               <div className="space-y-2">
-                <Label htmlFor="pix-key">Chave PIX</Label>
-                <Input
-                  id="pix-key"
-                  placeholder="CPF, E-mail, Telefone ou Chave Aleatória"
-                  defaultValue="joao@exemplo.com"
-                />
-                <p className="text-sm text-muted-foreground">Usada para receber pagamentos em BRL via PIX</p>
-              </div>
-              <Separator />
-              <div className="space-y-2">
-                <Label htmlFor="btc-address">Endereço Bitcoin</Label>
+                <Label htmlFor="btc-address">Bitcoin Address</Label>
                 <Input
                   id="btc-address"
-                  placeholder="Seu endereço Bitcoin"
+                  placeholder="Your Bitcoin address"
                   defaultValue="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
                 />
-                <p className="text-sm text-muted-foreground">Usado para receber pagamentos em Bitcoin</p>
+                <p className="text-sm text-muted-foreground">Used to receive Bitcoin payments</p>
               </div>
             </CardContent>
             <CardFooter>
-              <Button>Salvar Métodos de Pagamento</Button>
+              <Button>Save Payment Methods</Button>
             </CardFooter>
           </Card>
         </TabsContent>
@@ -156,23 +147,23 @@ export default function SettingsPage() {
         <TabsContent value="notifications" className="mt-6 space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle>Preferências de Notificação</CardTitle>
-              <CardDescription>Escolha como deseja receber notificações</CardDescription>
+              <CardTitle>Notification Preferences</CardTitle>
+              <CardDescription>Choose how you want to receive notifications</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <Label htmlFor="email-notifications">Notificações por E-mail</Label>
-                  <p className="text-sm text-muted-foreground">Receba atualizações sobre sua conta por e-mail</p>
+                  <Label htmlFor="email-notifications">Email Notifications</Label>
+                  <p className="text-sm text-muted-foreground">Receive account updates via email</p>
                 </div>
                 <Switch id="email-notifications" defaultChecked />
               </div>
               <Separator />
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <Label htmlFor="queue-notifications">Atualizações da Fila</Label>
+                  <Label htmlFor="queue-notifications">Queue Updates</Label>
                   <p className="text-sm text-muted-foreground">
-                    Seja notificado quando sua posição na fila mudar significativamente
+                    Be notified when your queue position changes significantly
                   </p>
                 </div>
                 <Switch id="queue-notifications" defaultChecked />
@@ -180,9 +171,9 @@ export default function SettingsPage() {
               <Separator />
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <Label htmlFor="payment-notifications">Pagamentos</Label>
+                  <Label htmlFor="payment-notifications">Payments</Label>
                   <p className="text-sm text-muted-foreground">
-                    Receba notificações sobre doações recebidas e enviadas
+                    Receive notifications about received and sent donations
                   </p>
                 </div>
                 <Switch id="payment-notifications" defaultChecked />
@@ -190,14 +181,14 @@ export default function SettingsPage() {
               <Separator />
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <Label htmlFor="bonus-notifications">Bônus</Label>
-                  <p className="text-sm text-muted-foreground">Seja notificado quando receber bônus da rede binária</p>
+                  <Label htmlFor="bonus-notifications">Bonus</Label>
+                  <p className="text-sm text-muted-foreground">Get notified when you receive binary network bonuses</p>
                 </div>
                 <Switch id="bonus-notifications" defaultChecked />
               </div>
             </CardContent>
             <CardFooter>
-              <Button>Salvar Preferências</Button>
+              <Button>Save Preferences</Button>
             </CardFooter>
           </Card>
         </TabsContent>
